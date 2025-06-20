@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOVIE Website BY Soni studio</title>
+    <link rel="stylesheet" href="Web.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <i class="fa fa-film"></i> MovieMafia
+        </div>
+        <div class="menu-toggle" id="menu-toggle"><i class="fa fa-bars"></i></div>
+        <nav id="navLinks">
+            <a href="#home">Home</a>
+            <a href="#movies">Movies</a>
+            <a href="#reviews">Reviews</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+
+<!-- Modern Rounded Search Bar with Weather Modal -->
+<!-- <div class="modern-search-bar">
+  <i class="fa fa-search"></i> -->
+  <!-- <span class="search-icon"></span> -->
+  <!-- <div class="modern-search-bar">
+    <i class="fa fa-search"></i>
+    <input type="text" placeholder="Search movies..." id="searchBar" autocomplete="off">
+  </div>
+  <span class="settings"><i class="fa fa-cog"></i></span>
+  <span class="weather" id="weatherBtn" style="cursor:pointer;">
+    Jaipur <span class="weather-icon">🌤️</span> 35°C
+  </span>
+</div> -->
+
+<div class="modern-search-bar">
+  <input type="text" placeholder="Search movies..." id="searchBar" autocomplete="off">
+  <span class="weather" id="weatherBtn" style="cursor:pointer;">
+    <span class="weather-city">Jaipur</span>
+    <span class="weather-icon">🌤️</span>
+    <span class="weather-temp">35°C</span>
+  </span>
+</div>
+
+
+
+
+
+<!-- Weather Forecast Modal -->
+<div id="weatherModal" class="weather-modal">
+  <div class="weather-modal-content">
+    <span class="weather-close" id="closeWeather">&times;</span>
+    <h2>Jaipur Weather Forecast</h2>
+    <ul>
+      <li>Today: 35°C, Sunny 🌤️</li>
+      <li>Tomorrow: 36°C, Partly Cloudy ⛅</li>
+      <li>Saturday: 34°C, Thunderstorm ⛈️</li>
+      <li>Sunday: 33°C, Sunny 🌞</li>
+    </ul>
+  </div>
+</div>
+
+    <main>
+        
+        <section id="home" class="hero">
+            <h1>Welcome to MovieMafia</h1>
+            <p>Your hub for movie reviews, trailers, and more!</p>
+        </section>
+        
+        <section id="movies">
+            <h2>Now Showing</h2>
+            <!-- <span class="search-icon"><i class="fa fa-search"></i></span> -->
+          <div class="search-bar-wrap">
+            <input type="text" id="searchBar" placeholder="Search movies..." autocomplete="off" />
+          </div>
+            <div id="movieLoader" class="movie-loader" style="display:none;">
+            <span class="loader"></span>
+            </div>
+          <div class="movie-grid" id="movieGrid"></div>
+        </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- <section id="movies">
+            <h2>Now Showing</h2>
+            <input type="text" id="searchBar" placeholder="Search movies..." />
+            <div class="movie-grid" id="movieGrid"></div>
+        </section> -->
+        
+
+        <section id="home" class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-logo">
+      <i class="fa fa-film"></i>
+      <span>MovieMafia</span>
+    </div>
+    <h1 class="hero-title">Unlimited Movies, Reviews & More</h1>
+    <p class="hero-tagline">Your ultimate destination for movie lovers. Discover, review, and share your favorite films!</p>
+    <a href="#movies" class="hero-btn">Browse Movies <i class="fa fa-arrow-right"></i></a>
+  </div>
+  <div class="trending-slider">
+    <h3><i class="fa fa-fire"></i> Trending Now</h3>
+    <div class="trending-movies" id="trendingMovies">
+      <div class="trending-movie">
+        <img src="https://image.tmdb.org/t/p/w500/8YFL5QQVPy3AgrEQxNYVSgiPEbe.jpg" alt="Avengers: Endgame">
+        <a href="https://www.imdb.com/title/tt4154796/" target="_blank" class="movie-link">AVENGERS: ENDGAME</a>
+        <!-- <span>Avengers: Endgame</span> -->
+      </div>
+      <div class="trending-movie">
+        <img src="https://m.media-amazon.com/images/I/81p+xe8cbnL._AC_SY679_.jpg" alt="Inception">
+        <a href="https://www.imdb.com/title/tt1375666/" target="_blank" class="movie-link">INCEPTION</a>
+        <!-- <span>Inception</span> -->
+      </div>
+       <div class="trending-movie">
+        <img src="https://th.bing.com/th/id/OIP.V4o7hRKHsaZ2YWTP7mQqjAHaEK?w=80&h=80&c=1&bgcl=c90d1d&r=0&o=6&dpr=1.5&pid=ImgRC" alt="Money Heist">
+        <a href="https://www.imdb.com/title/tt6468322/" target="_blank" class="movie-link">Money Heist</a>
+        
+      </div>
+      <div class="trending-movie">
+        <img src="https://th.bing.com/th/id/OIP.IDPKsEiI7dy5Zg39Cb1-ygHaLK?w=200&h=200&c=10&o=6&dpr=1.5&pid=genserp&rm=2" alt="Terrifier">
+        <a href="https://www.imdb.com/title/tt4281724/" target="_blank" class="movie-link">TERRIFIER</a>
+        <!-- <span>Terrifier</span> -->
+      </div>
+      <div class="trending-movie">
+        <img src="https://th.bing.com/th/id/OSK._SQegVDG7nkct-jkIegXqcXgNhLAOFRRqkSqLNmmkFA?w=80&h=118&c=7&o=6&dpr=1.5&pid=SANGAM" alt="Terrifier 2">
+        <a href="https://www.imdb.com/title/tt10403420/" target="_blank" class="movie-link">TERRIFIER 2</a>
+        <!-- <span>Terrifier 2</span> -->
+      </div>
+      <div class="trending-movie">
+        <img src="https://th.bing.com/th/id/OIP.dhxCxUa6w_SxsW3yrLSKPwHaK-?w=80&h=80&c=1&bgcl=6d2181&r=0&o=6&dpr=1.5&pid=ImgRC" alt="Terrifier 3">
+        <a href="https://www.imdb.com/title/tt27911000/" target="_blank" class="movie-link">TERRIFIER 3</a>
+        <!-- <span>Terrifier 3</span> -->
+      </div>
+      <div class="trending-movie">
+        <img src="https://m.media-amazon.com/images/I/71c05lTE03L._AC_SY679_.jpg" alt="Pulp Fiction">
+        <a href="https://www.imdb.com/title/tt0110912/" target="_blank" class="movie-link">PULP FICTION</a>
+        <!-- <span>Pulp Fiction</span> -->
+      </div>
+       <div class="trending-movie">
+        <img src="https://th.bing.com/th/id/OIP.jpS4iGrnuWwiIe0W0RQgggHaEK?w=80&h=80&c=1&bgcl=d0d15d&r=0&o=6&dpr=1.5&pid=ImgRC" alt="Annabelle">
+        <a href="https://www.imdb.com/title/tt3322940/" target="_blank" class="movie-link">ANNABELLE</a>
+        <!-- <span>Annabelle</span> -->
+      </div>
+      <div class="trending-movie">
+        <img src="https://image.tmdb.org/t/p/w500/1hRoyzDtpgMU7Dz4JF22RANzQO7.jpg" alt="The Dark Knight">
+        <a href="https://www.imdb.com/title/tt0468569/" target="_blank" class="movie-link">THE DARK KNIGHT</a>
+        <!-- <span>The Dark Knight</span> -->
+      </div>
+      <div class="trending-movie">
+        <img src="https://th.bing.com/th/id/OIP.AtZ1qCHavDLRpYadzl19EAAAAA?w=80&h=80&c=1&bgcl=0fd850&r=0&o=6&dpr=1.5&pid=ImgRC" alt="Titanic">
+        <a href="https://www.imdb.com/title/tt0120338/" target="_blank" class="movie-link">TITANIC</a>
+        <!-- <span>Titanic</span> -->
+      </div>
+      <div class="trending-movie">
+        <img src="https://image.tmdb.org/t/p/w500/3bhkrj58Vtu7enYsRolD1fZdja1.jpg" alt="The Godfather">
+        <a href="https://www.imdb.com/title/tt0068646/" target="_blank" class="movie-link">THE GODFATHER</a>
+        <!-- <span>The Godfather</span> -->
+      </div>
+      <div class="trending-movie">
+        <img src="https://www.bing.com/th/id/OIP.GGzj_iHbeurTqIEcNGIEdwHaLH?w=120&h=185&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2" alt="Fight Club">
+        <a href="https://www.imdb.com/title/tt0137523/" target="_blank" class="movie-link">FIGHT CLUB</a>
+        <!-- <span>Fight Club</span> -->
+      </div>
+      <div class="trending-movie">
+        <img src="https://www.bing.com/th/id/OIP.qeTgeLDl6ZpMpEaGSff_9AHaJ9?w=138&h=185&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2" alt="3 idots">
+        <a href="https://www.imdb.com/title/tt1187043/" target="_blank" class="movie-link">3IDIOTS</a>
+        <!-- <span>3 idots</span> -->
+      </div>
+      <div class="trending-movie">
+        <img src="https://th.bing.com/th/id/OSK.F05DBNl2xOejVmvaGaDXqTlaxlHznV8BPcyngFm0imM?w=46&h=46&c=11&rs=1&qlt=80&o=6&dpr=1.5&pid=SANGAM.jpg" alt="BAHUBALI: THE BEGINNING">
+        <a href="https://www.imdb.com/title/tt2631186/" target="_blank" class="movie-link">BAHUBALI: THE BEGINNING</a>
+        <!-- <span>BAHUBALI: THE BEGINNING</span> -->
+      </div>
+      
+
+    </div>
+    <button class="slider-btn left" id="slideLeft"><i class="fa fa-chevron-left"></i></button>
+    <button class="slider-btn right" id="slideRight"><i class="fa fa-chevron-right"></i></button>
+  </div>
+</section>
+        
+        <section id="reviews">
+            <h2>Movie Reviews Table</h2>
+            <table>
+                <tr>
+                    <th>S.No</th>
+                    <th>Movie Name</th>
+                    <th>Rating</th>
+                    <th>Status</th>
+                    <th>Box Office Collection</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td><a href="https://www.imdb.com/title/tt1375666/" target="_blank" class="movie-link">INCEPTION</a></td>
+                    <td>4.5/5</td>
+                    <td>Hit</td>
+                    <td>1000 Cr</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td><a href="https://www.imdb.com/title/tt4154796/" target="_blank" class="movie-link">AVENGERS:ENDGAME</a></td>
+                    <td>4.8/5</td>
+                    <td>SuperHit</td>
+                    <td>1200 Cr</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td><a href="https://www.imdb.com/title/tt0110912/" target="_blank" class="movie-link">PULP FICTION</a></td>
+                    <td>4.9/5</td>
+                    <td>SuperHit</td>
+                    <td>1500 Cr</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td><a href="https://www.imdb.com/title/tt0468569/" target="_blank" class="movie-link">THE DARK KNIGHT</a></td>
+                    <td>4.9/5</td>
+                    <td>SuperHit</td>
+                    <td>1500 Cr</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td><a href="https://www.imdb.com/title/tt0068646/" target="_blank" class="movie-link">THE GODFATHER</a></td>
+                    <td>4.8/5</td>      
+                    <td>SuperHit</td>
+                    <td>1200 Cr</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td><a href="https://www.imdb.com/title/tt0137523/" target="_blank" class="movie-link">FIGHT CLUB</a></td>
+                    <td>4.7/5</td>
+                    <td>Hit</td>
+                    <td>900 Cr</td>
+                </tr>
+            </table>
+        </section>
+        <section id="about">
+            <h2>About MovieMafia</h2>
+
+            <!-- <p>MovieMafia is your one-stop destination for the latest movie reviews, trailers, and news. Join our community and never miss an update!</p> -->
+        </section>
+
+
+
+
+
+        <section id="about" class="about-advanced">
+  <div class="about-bg"></div>
+  <div class="about-overlay"></div>
+  <div class="about-content">
+    <div class="about-logo">
+      <i class="fa fa-film"></i>
+      <span>MovieMafia</span>
+    </div>
+    <!-- <h2>About MovieMafia</h2> -->
+    <p>
+      MovieMafia is your one-stop destination for the latest movie reviews, trailers, and news.  
+      Join our community, discover trending films, and share your own reviews with movie lovers worldwide!
+    </p>
+    <div class="about-stats">
+      <div class="stat">
+        <span class="stat-number" data-count="500">0</span>
+        <span class="stat-label">+ Movies Reviewed</span>
+      </div>
+      <div class="stat">
+        <span class="stat-number" data-count="120">0</span>
+        <span class="stat-label">+ Trailers</span>
+      </div>
+      <div class="stat">
+        <span class="stat-number" data-count="1000">0</span>
+        <span class="stat-label">+ Community Members</span>
+      </div>
+      <div class="stat">
+        <span class="stat-number" data-count="5">0</span>
+        <span class="stat-label">Years Online</span>
+      </div>
+    </div>
+  </div>
+</section>
+        <!-- <section id="contact">
+            <h2>Contact Us</h2>
+            <p>Email: <a href="mailto:Soni@example.com">Sonistudio@gmail.com</a></p>
+            <p>Phone: <a href="tel:+1234567890">+1234567890</a></p>
+        </section> -->
+
+
+
+
+        <!-- Contact Section Start -->
+<section class="contact-section" id="contact">
+  <div class="contact-container">
+    <div class="contact-info">
+      <img src="notes/Co-Founder of Moviemafiya.jpg" width="22%" height="15%" alt="Contact" class="contact-img">
+      <h2>Contact Us</h2>
+      <div class="info-block">
+        <!-- <h3><i class="fas fa-envelope"></i> Email Address</h3>
+        <p>Email: <a href="mailto:Soni@example.com">Sonistudio@gmail.com</a></p>
+        <p><i class="fas fa-phone" ></i>Phone: <a href="tel:+1234567890">+1234567890</a></p> -->
+        <h3><i class="fas fa-map-marker-alt"></i><p>C15 jp colony tonk phatak,Jaipur,Rajasthan,302015</p></h3>
+        <h3><i class="fas fa-envelope"></i><a href="mailto:Soni@example.com">Sonistudio@gmail.com</a></h3>
+        <h3><p><i class="fas fa-phone" ></i>+1234567890</p></h3>
+        <h3><i class="fas fa-clock"></i>Working Hours: Mon-Fri 9:00 AM - 6:00 PM</h3>
+
+      </div>
+      <!-- <div class="info-block">
+        <h3><i class="fas fa-map-marker-alt"></i><p>C15 jp colony tonk phatak,Jaipur</p></h3>
+        
+      </div> -->
+      <hr>
+      <div class="info-block">
+        <h3><i class="fas fa-share-alt"></i> Social Media</h3>
+        <div class="social-links">
+          <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+    <form class="contact-form" id="contactForm" autocomplete="off">
+      <h2>Send a Message</h2>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="fullname"><i class="fas fa-user"></i> Full name</label>
+          <input type="text" id="fullname" placeholder="Your Name" required>
+        </div>
+        <div class="form-group">
+          <label for="email"><i class="fas fa-envelope"></i> Email address</label>
+          <input type="email" id="email" placeholder="example@gmail.com" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="phone"><i class="fas fa-phone"></i> Phone number</label>
+          <input type="tel" id="phone" placeholder="+91 98765 43210">
+        </div>
+        <div class="form-group">
+          <label for="subject"><i class="fas fa-tag"></i> Subject</label>
+          <input type="text" id="subject" placeholder="Type your subject">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="message"><i class="fas fa-comment"></i> Message</label>
+        <textarea id="message" rows="3" placeholder="Type your message" required></textarea>
+      </div>
+      <button type="submit" class="contact-btn">Send Message</button>
+      <div id="formMsg"></div>
+    </form>
+  </div>
+</section>
+<!-- Contact Section End -->
+    </main>
+    <footer>
+        <p>&copy; 2025 MovieMania. All rights reserved.</p>
+        <p>Designed by Abhimanyu Soni</p>
+    </footer>
+    <!-- Trailer Modal -->
+    <div id="trailerModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeModal">&times;</span>
+            <iframe id="trailerFrame" width="560" height="315" src="" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+    <!-- User Reviews Modal -->
+    <div id="reviewModal" class="modal">
+        <div class="modal-content review-modal-content">
+            <span class="close" id="closeReviewModal">&times;</span>
+            <h3 id="reviewMovieTitle"></h3>
+            <div id="userReviews"></div>
+            <form id="reviewForm">
+                <input type="text" id="reviewerName" placeholder="Your Name" required>
+                <textarea id="reviewText" placeholder="Write your review..." required></textarea>
+                <button type="submit">Submit Review</button>
+            </form>
+        </div>
+    </div>
+    <script src="MovieSite.js"></script>
+</body>
+</html>
+
+
+
+
